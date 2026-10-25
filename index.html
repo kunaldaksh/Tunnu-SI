@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f6f2" id="theme-color" />
+    <meta name="description" content="Meet Tunnu SI: an intelligent workspace for documents, data, workflows, decisions, and visual operations." />
+    <title>Tunnu SI — Make room for the work that matters</title>
+    <script>
+      const savedTheme = localStorage.getItem('tunnu-si-theme') || localStorage.getItem('snohai-theme')
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light')
+      document.documentElement.dataset.theme = theme
+      document.documentElement.style.colorScheme = theme
+      document.getElementById('theme-color').content = theme === 'dark' ? '#151915' : '#f7f6f2'
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
